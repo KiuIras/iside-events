@@ -8,7 +8,7 @@ import it.kiuiras.isideevents.util.QueryBuilder;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.util.List;
 
 public class IsideEvents {
 
@@ -30,22 +30,22 @@ public class IsideEvents {
         return Parser.parse(url).get(0);
     }
 
-    public static ArrayList<Earthquake> getEvents(LocalDateTime time) throws IOException {
+    public static List<Earthquake> getEvents(LocalDateTime time) throws IOException {
         URL url = QueryBuilder.eventsQuery(time);
         return Parser.parse(url);
     }
 
-    public static ArrayList<Earthquake> getEvents(LocalDateTime startTime, LocalDateTime endTime) throws IOException {
+    public static List<Earthquake> getEvents(LocalDateTime startTime, LocalDateTime endTime) throws IOException {
         URL url = QueryBuilder.eventsQuery(startTime, endTime);
         return Parser.parse(url);
     }
 
-    public static ArrayList<Earthquake> getEvents(LocalDateTime startTime, LocalDateTime endTime, Coordinate p1, Coordinate p2) throws IOException {
+    public static List<Earthquake> getEvents(LocalDateTime startTime, LocalDateTime endTime, Coordinate p1, Coordinate p2) throws IOException {
         URL url = QueryBuilder.eventsQuery(startTime, endTime, p1, p2);
         return Parser.parse(url);
     }
 
-    public static ArrayList<Earthquake> getEvents(LocalDateTime time, Coordinate p1, Coordinate p2) throws IOException {
+    public static List<Earthquake> getEvents(LocalDateTime time, Coordinate p1, Coordinate p2) throws IOException {
         URL url = QueryBuilder.eventsQuery(time, p1, p2);
         return Parser.parse(url);
     }

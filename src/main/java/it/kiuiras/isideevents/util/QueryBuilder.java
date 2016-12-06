@@ -64,7 +64,8 @@ public final class QueryBuilder {
      * @throws MalformedURLException
      */
     public static URL eventsQuery(LocalDateTime startTime, LocalDateTime endTime, Coordinate p1, Coordinate p2) throws MalformedURLException {
-        return buildUrl(eventsQuery(startTime, endTime)+"minlat="+p1.getLatitude()+"&minlon="+p1.getLongitude()+"&maxlat="+p2.getLatitude()+"&maxlon="+p2.getLongitude()+"&");
+    	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+        return buildUrl("starttime="+startTime.format(formatter)+"&endtime="+ endTime.format(formatter)+"&minlat="+p1.getLatitude()+"&minlon="+p1.getLongitude()+"&maxlat="+p2.getLatitude()+"&maxlon="+p2.getLongitude()+"&");
     }
 
     /**
@@ -77,9 +78,10 @@ public final class QueryBuilder {
      * @throws MalformedURLException
      */
     public static URL eventsQuery(LocalDateTime time, Coordinate p1, Coordinate p2) throws MalformedURLException {
-        return buildUrl(eventsQuery(time)+"minlat="+p1.getLatitude()+"&minlon="+p1.getLongitude()+"&maxlat="+p2.getLatitude()+"&maxlon="+p2.getLongitude()+"&");
-    }
-
+    	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+        return buildUrl("starttime="+time.format(formatter)+"&minlat="+p1.getLatitude()+"&minlon="+p1.getLongitude()+"&maxlat="+p2.getLatitude()+"&maxlon="+p2.getLongitude()+"&");
+  }
+    
     /**
      * A private method to build a valid ISIDe URL
      *
