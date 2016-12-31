@@ -80,5 +80,10 @@ public class IsideEventsTest {
 			assertEquals("Earthquakes must be earthquakes",e.getClass(),Earthquake.class);
 		}
 	}
+	
+	@Test
+	public void testMainMethod() {
+		IsideEvents.main(null);
+	}
 
 }

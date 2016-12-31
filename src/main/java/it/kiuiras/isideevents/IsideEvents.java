@@ -29,26 +29,66 @@ public class IsideEvents {
         }
     }
 
+    /**
+     * Retrieve last earthquake.
+     * 
+     * @return instance of last earthquake
+     * @throws IOException
+     */
     public static Earthquake getLastEvent() throws IOException {
         URL url = QueryBuilder.lastEventQuery();
         return Parser.parse(url).get(0);
     }
 
+    /**
+     * Retrieve a list of earthquakes on or after the specified start time.
+     * 
+     * @param time			start time
+     * @return				list of earthquakes from given time
+     * @throws IOException
+     */
     public static List<Earthquake> getEvents(LocalDateTime time) throws IOException {
         URL url = QueryBuilder.eventsQuery(time);
         return Parser.parse(url);
     }
 
+    /**
+     * Retrieve a list of earthquakes between start time and end time.
+     * 
+     * @param startTime		start time
+     * @param endTime		end time
+     * @return				list of earthquakes in given range of time
+     * @throws IOException
+     */
     public static List<Earthquake> getEvents(LocalDateTime startTime, LocalDateTime endTime) throws IOException {
         URL url = QueryBuilder.eventsQuery(startTime, endTime);
         return Parser.parse(url);
     }
 
+    /**
+     * Retrieve a list of earthquakes between start time and end time within geographic constraints.
+     * 
+     * @param startTime		start time
+     * @param endTime		end time
+     * @param p1			minimum latitude and longitude
+     * @param p2			maximum latitude and longitude
+     * @return				list of earthquakes in given range of time within geographic constraints.
+     * @throws IOException
+     */
     public static List<Earthquake> getEvents(LocalDateTime startTime, LocalDateTime endTime, Coordinate p1, Coordinate p2) throws IOException {
         URL url = QueryBuilder.eventsQuery(startTime, endTime, p1, p2);
         return Parser.parse(url);
     }
 
+    /**
+     * Retrieve a list of earthquakes on or after the specified start time within geographic constraints.
+     * 
+     * @param time			start time
+     * @param p1			minimum latitude and longitude
+     * @param p2			maximum latitude and longitude
+     * @return				list of earthquake from a given time within geographic constraints
+     * @throws IOException
+     */
     public static List<Earthquake> getEvents(LocalDateTime time, Coordinate p1, Coordinate p2) throws IOException {
         URL url = QueryBuilder.eventsQuery(time, p1, p2);
         return Parser.parse(url);

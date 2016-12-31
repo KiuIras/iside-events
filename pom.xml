@@ -6,7 +6,7 @@
 
     <groupId>it.kiuiras.isideevents</groupId>
     <artifactId>iside-events</artifactId>
-    <version>0.1</version>
+    <version>0.0.1-SNAPSHOT</version>
     
 	<build>
 		<plugins>
