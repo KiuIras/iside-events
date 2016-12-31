@@ -13,9 +13,13 @@ import java.util.List;
 public class IsideEvents {
 
     public static void main(String[] args) {
-        try {
-            System.out.println("Ultimo evento " + getLastEvent().getLocation());
-            for (Earthquake e : getEvents(LocalDateTime.parse("2016-11-15T00:00:00"))
+        //	EXAMPLE
+    	try {
+        	//	Print last event
+        	System.out.println("Ultimo evento " + getLastEvent().getLocation());
+            
+        	//	Print events of last 10 days
+            for (Earthquake e : getEvents(LocalDateTime.now().minusDays(10))
                  ) {
                 if (e.getMagnitude() > 2.5)
                 System.out.println(e.getLocation() + ", "+ e.getMagnitude());

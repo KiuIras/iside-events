@@ -71,7 +71,7 @@ public class IsideEventsTest {
 	public void testGetEventsLocalDateTimeCoordinateCoordinate() {
 		ArrayList<Earthquake> es = new ArrayList<>();
 		try {
-			es = (ArrayList<Earthquake>) IsideEvents.getEvents(LocalDateTime.now().minusDays(10),LocalDateTime.now().minusDays(5),new Coordinate(0,0), new Coordinate(90,90));
+			es = (ArrayList<Earthquake>) IsideEvents.getEvents(LocalDateTime.now().minusDays(10),new Coordinate(0,0), new Coordinate(90,90));
 		} catch (IOException e) {
 			e.printStackTrace();
 			fail("Can't get earthquakes");
