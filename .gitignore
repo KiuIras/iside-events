@@ -2,3 +2,6 @@
 target
 iside-events.iml
 .git
+.project
+.classpath
+.settings
