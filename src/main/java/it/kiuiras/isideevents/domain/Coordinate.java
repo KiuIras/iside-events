@@ -28,4 +28,17 @@ public class Coordinate {
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Coordinate [latitude=");
+		builder.append(latitude);
+		builder.append(", longitude=");
+		builder.append(longitude);
+		builder.append("]");
+		return builder.toString();
+	}
+    
+    
 }

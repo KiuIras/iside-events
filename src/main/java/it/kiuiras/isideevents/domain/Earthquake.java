@@ -71,4 +71,25 @@ public class Earthquake {
         this.id = id;
     }
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Earthquake [id=");
+		builder.append(id);
+		builder.append(", coordinate=");
+		builder.append(coordinate);
+		builder.append(", depth=");
+		builder.append(depth);
+		builder.append(", date=");
+		builder.append(date);
+		builder.append(", magnitude=");
+		builder.append(magnitude);
+		builder.append(", location=");
+		builder.append(location);
+		builder.append("]");
+		return builder.toString();
+	}
+    
+    
+
 }

@@ -16,7 +16,7 @@ public class IsideEvents {
         //	EXAMPLE
     	try {
         	//	Print last event
-        	System.out.println("Ultimo evento " + getLastEvent().getLocation());
+        	System.out.println("Last event: " + getLastEvent().toString());
             
         	//	Print events of last 10 days
             for (Earthquake e : getEvents(LocalDateTime.now().minusDays(10))
